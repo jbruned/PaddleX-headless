@@ -24,7 +24,7 @@ from PIL import Image, ImageOps
 
 from ....utils.deps import class_requires_deps, is_dep_available
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 if is_dep_available("pypdfium2"):
     import pypdfium2 as pdfium
@@ -218,7 +218,7 @@ class _ImageReaderBackend(_BaseReaderBackend):
     """_ImageReaderBackend"""
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class OpenCVImageReaderBackend(_ImageReaderBackend):
     """OpenCVImageReaderBackend"""
 
@@ -244,7 +244,7 @@ class PILImageReaderBackend(_ImageReaderBackend):
         return ImageOps.exif_transpose(Image.open(in_path))
 
 
-@class_requires_deps("pypdfium2", "opencv-contrib-python")
+@class_requires_deps("pypdfium2", "opencv-contrib-python-headless")
 class PDFReaderBackend(_BaseReaderBackend):
 
     def __init__(self, rotate=0, zoom=2.0):
@@ -273,7 +273,7 @@ class _VideoReaderBackend(_BaseReaderBackend):
         raise NotImplementedError
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class OpenCVVideoReaderBackend(_VideoReaderBackend):
     """OpenCVVideoReaderBackend"""
 

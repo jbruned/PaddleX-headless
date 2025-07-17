@@ -24,13 +24,13 @@ from .....utils.deps import (
     is_dep_available,
 )
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 #### [TODO] need sunting to add explanatory notes
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def Homography(
     image,
     img_points,
@@ -71,7 +71,7 @@ def Homography(
     return dst_img
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class PlanB:
     def __call__(
         self,
@@ -140,7 +140,7 @@ class PlanB:
         return dst_img, loss
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class CurveTextRectifier:
     """
     spatial transformer via monocular vision
@@ -727,7 +727,7 @@ class CurveTextRectifier:
         return dst, ret
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class AutoRectifier:
     def __init__(self):
         self.npoints = 10

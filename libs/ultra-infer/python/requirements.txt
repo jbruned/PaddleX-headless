@@ -3,5 +3,5 @@ requests
 tqdm
 numpy<2
 # Compatible with paddlex
-opencv-contrib-python
+opencv-contrib-python-headless
 pyyaml

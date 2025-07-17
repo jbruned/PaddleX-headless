@@ -23,11 +23,11 @@ from ....utils.deps import class_requires_deps, function_requires_deps, is_dep_a
 from ....utils.fonts import SIMFANG_FONT_FILE_PATH, create_font, create_font_vertical
 from ...common.result import BaseCVResult, JsonMixin
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class OCRResult(BaseCVResult):
     """OCR result"""
 
@@ -189,7 +189,7 @@ class OCRResult(BaseCVResult):
 
 
 # Adds a function comment according to Google Style Guide
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def draw_box_txt_fine(
     img_size: tuple, box: np.ndarray, txt: str, font_path: str
 ) -> np.ndarray:
@@ -245,7 +245,7 @@ def draw_box_txt_fine(
     return img_right_text
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def draw_vertical_text(draw, position, text, font, fill=(0, 0, 0), line_spacing=2):
     x, y = position
     for char in text:

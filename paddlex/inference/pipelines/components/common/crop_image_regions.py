@@ -22,7 +22,7 @@ from .....utils.deps import class_requires_deps, is_dep_available
 from .base_operator import BaseOperator
 from .seal_det_warp import AutoRectifier
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 if is_dep_available("shapely"):
     from shapely.geometry import Polygon
@@ -64,7 +64,7 @@ class CropByBoxes(BaseOperator):
         return output_list
 
 
-@class_requires_deps("opencv-contrib-python", "shapely")
+@class_requires_deps("opencv-contrib-python-headless", "shapely")
 class CropByPolys(BaseOperator):
     """Crop Image by Polys"""
 

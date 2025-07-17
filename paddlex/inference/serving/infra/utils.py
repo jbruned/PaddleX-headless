@@ -34,7 +34,7 @@ from .models import ImageInfo, PDFInfo, PDFPageInfo
 
 if is_dep_available("aiohttp"):
     import aiohttp
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 if is_dep_available("filetype"):
     import filetype
@@ -140,7 +140,7 @@ def infer_file_ext(file: str) -> Optional[str]:
         return "." + filetype.guess_extension(bytes_)
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def image_bytes_to_array(data: bytes) -> np.ndarray:
     return cv2.imdecode(np.frombuffer(data, np.uint8), cv2.IMREAD_COLOR)
 
@@ -156,7 +156,7 @@ def image_to_bytes(image: Image.Image, format: str = "JPEG") -> bytes:
     return img_bytes
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def image_array_to_bytes(image: np.ndarray, ext: str = ".jpg") -> bytes:
     image = cv2.imencode(ext, image)[1]
     return image.tobytes()
@@ -176,7 +176,7 @@ def base64_encode(data: bytes) -> str:
     return base64.b64encode(data).decode("ascii")
 
 
-@function_requires_deps("pypdfium2", "opencv-contrib-python")
+@function_requires_deps("pypdfium2", "opencv-contrib-python-headless")
 def read_pdf(
     bytes_: bytes, max_num_imgs: Optional[int] = None
 ) -> Tuple[List[np.ndarray], PDFInfo]:

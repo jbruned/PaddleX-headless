@@ -16,11 +16,11 @@ import numpy as np
 
 from .....utils.deps import function_requires_deps, is_dep_available
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def rotate_image(image, angle):
     if angle < 0 or angle >= 360:
         raise ValueError("`angle` should be in range [0, 360)")

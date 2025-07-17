@@ -23,7 +23,7 @@ from ...utils.benchmark import benchmark
 from ..common import Normalize as CommonNormalize
 from ..common import Resize as CommonResize
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 Boxes = List[dict]
@@ -31,7 +31,7 @@ Number = Union[int, float]
 
 
 @benchmark.timeit_with_options(name=None, is_read_operation=True)
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class ReadImage(CommonReadImage):
     """Reads images from a list of raw image data or file paths."""
 
@@ -315,7 +315,7 @@ def _get_3rd_point(a: ndarray, b: ndarray) -> ndarray:
     return third_pt
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def get_affine_transform(
     center: ndarray,
     input_size: Union[Number, Tuple[Number, Number], ndarray],
@@ -373,7 +373,7 @@ def get_affine_transform(
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class WarpAffine:
     """Apply warp affine transformation to the image based on the given parameters.
 

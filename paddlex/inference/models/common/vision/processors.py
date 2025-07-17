@@ -21,11 +21,11 @@ from .....utils.deps import class_requires_deps, is_dep_available
 from ....utils.benchmark import benchmark
 from . import funcs as F
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class _BaseResize:
     def __init__(self, size_divisor, interp, backend="cv2"):
         _CV2_INTERP_DICT = {
@@ -220,7 +220,7 @@ class ResizeByShort(_BaseResize):
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class Normalize:
     """Normalize the three-channel image."""
 

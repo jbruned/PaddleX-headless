@@ -36,11 +36,11 @@ from ...models.formula_recognition.result import (
     pdf2img,
 )
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class FormulaRecognitionResult(BaseCVResult):
     """Formula Recognition Result"""
 
@@ -216,7 +216,7 @@ class FormulaRecognitionResult(BaseCVResult):
         return JsonMixin._to_json(data, *args, **kwargs)
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def draw_box_formula_fine(
     img_size: Tuple[int, int], box: np.ndarray, formula: str, is_debug: bool = False
 ) -> np.ndarray:

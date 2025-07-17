@@ -22,7 +22,7 @@ from ....utils.fonts import PINGFANG_FONT_FILE_PATH
 from ...common.result import BaseCVResult, JsonMixin
 from ...utils.color_map import font_colormap, get_colormap
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
@@ -74,7 +74,7 @@ def draw_attribute_result(img, boxes):
     return img
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class AttributeRecResult(BaseCVResult):
 
     def _to_str(self, *args, **kwargs):

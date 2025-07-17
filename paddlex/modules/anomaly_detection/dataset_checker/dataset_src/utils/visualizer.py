@@ -17,7 +17,7 @@ import numpy as np
 
 from ......utils.deps import function_requires_deps, is_dep_available
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
@@ -38,7 +38,7 @@ def get_color_map_list(length):
     return color_map
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def visualize(image, result, weight=0.6, use_multilabel=False):
     """Convert predict result to color image, and save added image."""
     color_map = get_color_map_list(256)
