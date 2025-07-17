@@ -21,7 +21,7 @@ from ....utils.deps import class_requires_deps, is_dep_available
 from ...common.reader.det_3d_reader import Sample
 from ...utils.benchmark import benchmark
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
@@ -271,7 +271,7 @@ class LoadPointsFromMultiSweeps(object):
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class LoadMultiViewImageFromFiles:
     """Load multi-view images from files."""
 
@@ -339,7 +339,7 @@ class LoadMultiViewImageFromFiles:
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class ResizeImage:
     """Resize images & bbox & mask."""
 
@@ -678,7 +678,7 @@ class ResizeImage:
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class NormalizeImage:
     """Normalize the image."""
 
@@ -738,7 +738,7 @@ class NormalizeImage:
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class PadImage(object):
     """Pad the image & mask."""
 

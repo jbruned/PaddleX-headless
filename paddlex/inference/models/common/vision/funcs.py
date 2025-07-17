@@ -18,7 +18,7 @@ from PIL import Image
 from .....utils import logging
 from .....utils.deps import function_requires_deps, is_dep_available
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
@@ -50,7 +50,7 @@ def resize(im, target_size, interp, backend="cv2"):
     return im
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def _cv2_resize(src, size, resample):
     return cv2.resize(src, size, interpolation=resample)
 
@@ -64,13 +64,13 @@ def _pil_resize(src, size, resample):
     return np.asarray(pil_img)
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def flip_h(im):
     """flip image horizontally"""
     return cv2.flip(im, 1)
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def flip_v(im):
     """flip image vertically"""
     return cv2.flip(im, 0)
@@ -83,7 +83,7 @@ def slice(im, coords):
     return im
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def pad(im, pad, val):
     """padding image by value"""
     if isinstance(pad, int):

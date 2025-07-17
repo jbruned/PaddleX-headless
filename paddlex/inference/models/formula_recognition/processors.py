@@ -24,7 +24,7 @@ from PIL import Image, ImageOps
 from ....utils.deps import class_requires_deps, is_dep_available
 from ...utils.benchmark import benchmark
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 if is_dep_available("tokenizers"):
     from tokenizers import AddedToken
@@ -32,7 +32,7 @@ if is_dep_available("tokenizers"):
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class MinMaxResize:
     """Class for resizing images to be within specified minimum and maximum dimensions, with padding and normalization."""
 
@@ -158,7 +158,7 @@ class MinMaxResize:
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class LatexTestTransform:
     """
     A transform class for processing images according to Latex test requirements.
@@ -406,7 +406,7 @@ class LaTeXOCRDecode(object):
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class UniMERNetImgDecode(object):
     """Class for decoding images for UniMERNet, including cropping margins, resizing, and padding."""
 
@@ -928,7 +928,7 @@ class UniMERNetDecode(object):
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class UniMERNetTestTransform:
     """
     A class for transforming images according to UniMERNet test specifications.
