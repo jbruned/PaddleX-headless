@@ -23,7 +23,7 @@ from PIL import Image, ImageOps
 from .....utils.deps import function_requires_deps, is_dep_available
 from .....utils.file_interface import custom_open
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 if is_dep_available("matplotlib"):
     import matplotlib.pyplot as plt
@@ -143,7 +143,7 @@ def simple_analyse(dataset_path, max_recorded_sample_cnts=20, show_label=True):
         )
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def show_label_img(img_path, dt_boxes):
     """draw ocr detection label"""
     img = cv2.imread(img_path)
@@ -153,7 +153,7 @@ def show_label_img(img_path, dt_boxes):
     return img[:, :, ::-1]
 
 
-@function_requires_deps("matplotlib", "opencv-contrib-python")
+@function_requires_deps("matplotlib", "opencv-contrib-python-headless")
 def deep_analyse(dataset_path, output):
     """class analysis for dataset"""
     sample_results = simple_analyse(

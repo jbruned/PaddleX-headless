@@ -25,7 +25,7 @@ from PIL import Image
 from ....utils.deps import class_requires_deps, is_dep_available
 from .tablepyxl import document_to_xl
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
@@ -309,7 +309,7 @@ class _ImageWriterBackend(_BaseWriterBackend):
     """_ImageWriterBackend"""
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class OpenCVImageWriterBackend(_ImageWriterBackend):
     """OpenCVImageWriterBackend"""
 
@@ -349,7 +349,7 @@ class _VideoWriterBackend(_BaseWriterBackend):
     """_VideoWriterBackend"""
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class OpenCVVideoWriterBackend(_VideoWriterBackend):
     """OpenCVImageWriterBackend"""
 

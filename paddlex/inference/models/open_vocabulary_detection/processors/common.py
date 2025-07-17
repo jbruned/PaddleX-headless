@@ -19,11 +19,11 @@ import numpy as np
 
 from .....utils.deps import class_requires_deps, is_dep_available
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class LetterResize(object):
     def __init__(
         self,

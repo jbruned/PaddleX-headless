@@ -21,7 +21,7 @@ from PIL import Image
 from ....utils.deps import function_requires_deps, is_dep_available
 from ...common.result import BaseCVResult, JsonMixin
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 if is_dep_available("matplotlib"):
     import matplotlib.pyplot as plt
@@ -33,7 +33,7 @@ def get_color(idx):
     return color
 
 
-@function_requires_deps("matplotlib", "opencv-contrib-python")
+@function_requires_deps("matplotlib", "opencv-contrib-python-headless")
 def draw_keypoints(img, results, visual_thresh=0.1, ids=None):
     plt.switch_backend("agg")
     skeletons = results["keypoints"]

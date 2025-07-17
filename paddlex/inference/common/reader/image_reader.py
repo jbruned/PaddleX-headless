@@ -18,12 +18,12 @@ from ....utils.deps import class_requires_deps, is_dep_available
 from ...utils.benchmark import benchmark
 from ...utils.io import ImageReader
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
 @benchmark.timeit_with_options(name=None, is_read_operation=True)
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class ReadImage:
     """Load image from the file."""
 

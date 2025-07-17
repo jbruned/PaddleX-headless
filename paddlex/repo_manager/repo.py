@@ -321,7 +321,7 @@ class RepositoryGroupInstaller(object):
                 # HACK: Avoid installing OpenCV variants unexpectedly
                 fc.write("opencv-python == 0.0.0\n")
                 fc.write("opencv-python-headless == 0.0.0\n")
-                fc.write("opencv-contrib-python-headless == 0.0.0\n")
+                fc.write("opencv-contrib-python == 0.0.0\n")
             pip_install_opts = []
             pip_install_opts.append("-c")
             pip_install_opts.append(cons_file)
@@ -388,7 +388,7 @@ class RepositoryGroupInstaller(object):
             ):
                 # FIXME: The original version specifiers are ignored. It would be better to check them here.
                 # The resolver will get the version info from the constraints file.
-                line_s = "opencv-contrib-python"
+                line_s = "opencv-contrib-python-headless"
             elif req.name == "albumentations":
                 # HACK
                 line_s = "albumentations @ https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/patched_packages/albumentations-1.4.10%2Bpdx-py3-none-any.whl"

@@ -21,14 +21,14 @@ from ....utils import logging
 from ....utils.deps import class_requires_deps, is_dep_available
 from ...utils.benchmark import benchmark
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 if is_dep_available("pyclipper"):
     import pyclipper
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class DetResizeForTest:
     """DetResizeForTest"""
 
@@ -232,7 +232,7 @@ class DetResizeForTest:
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class NormalizeImage:
     """normalize image such as subtract mean, divide std"""
 
@@ -272,7 +272,7 @@ class NormalizeImage:
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python", "pyclipper")
+@class_requires_deps("opencv-contrib-python-headless", "pyclipper")
 class DBPostProcess:
     """
     The post process for Differentiable Binarization (DB).

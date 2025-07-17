@@ -21,7 +21,7 @@ from ...utils.benchmark import benchmark
 from ..common.vision import funcs as F
 from ..common.vision.processors import _BaseResize
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
@@ -83,7 +83,7 @@ class Resize(_BaseResize):
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class SegPostProcess:
     """Semantic Segmentation PostProcess
 

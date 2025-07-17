@@ -47,7 +47,7 @@ DEP_SPECS = {
     "matplotlib": "",
     "numpy": ">= 1.24",
     "openai": ">= 1.63",
-    "opencv-contrib-python": "== 4.10.0.84",
+    "opencv-contrib-python-headless": "== 4.10.0.84",
     "openpyxl": "",
     "packaging": "",
     "pandas": ">= 1.3",
@@ -102,7 +102,7 @@ EXTRAS = {
         "cv": [
             "faiss-cpu",
             "matplotlib",
-            "opencv-contrib-python",
+            "opencv-contrib-python-headless",
             "pycocotools",
             # Currently `pypdfium2` is required by the image batch sampler
             "pypdfium2",
@@ -113,7 +113,7 @@ EXTRAS = {
             "ftfy",
             "GPUtil",
             "Jinja2",
-            "opencv-contrib-python",
+            "opencv-contrib-python-headless",
             # For the same reason as in `cv`
             "pypdfium2",
             "regex",
@@ -128,7 +128,7 @@ EXTRAS = {
             "langchain-openai",
             "lxml",
             "openai",
-            "opencv-contrib-python",
+            "opencv-contrib-python-headless",
             "openpyxl",
             "premailer",
             "pyclipper",
@@ -143,7 +143,7 @@ EXTRAS = {
             "imagesize",
             "lxml",
             "openai",
-            "opencv-contrib-python",
+            "opencv-contrib-python-headless",
             "openpyxl",
             "premailer",
             "pyclipper",
@@ -158,7 +158,7 @@ EXTRAS = {
             "imagesize",
             "Jinja2",
             "lxml",
-            "opencv-contrib-python",
+            "opencv-contrib-python-headless",
             "openpyxl",
             "premailer",
             "pyclipper",
@@ -184,7 +184,7 @@ EXTRAS = {
         ],
         "video": [
             "decord",
-            "opencv-contrib-python",
+            "opencv-contrib-python-headless",
         ],
     },
     "plugins": {

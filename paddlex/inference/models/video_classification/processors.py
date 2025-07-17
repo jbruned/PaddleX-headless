@@ -20,12 +20,12 @@ import numpy as np
 from ....utils.deps import class_requires_deps, is_dep_available
 from ...utils.benchmark import benchmark
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class Scale:
     """Scale images."""
 
@@ -244,7 +244,7 @@ class Image2Array:
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class NormalizeVideo:
     """
     Normalize video frames by subtracting the mean and dividing by the standard deviation.

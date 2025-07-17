@@ -22,7 +22,7 @@ from ......utils.deps import function_requires_deps, is_dep_available
 from ....infra import utils as serving_utils
 from ....infra.storage import Storage, SupportsGetURL
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
@@ -42,7 +42,7 @@ def prune_result(result: dict) -> dict:
     return _process_obj(result)
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def postprocess_image(
     image: np.ndarray,
     log_id: str,

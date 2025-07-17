@@ -9,6 +9,7 @@ distributed_train_logs
 
 # IDE 
 .vscode
+.idea
 
 # Mac
 *.DS_Store

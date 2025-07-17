@@ -56,7 +56,7 @@ MOD_TO_DEP = {
     "matplotlib": "matplotlib",
     "numpy": "numpy",
     "openai": "openai",
-    "cv2": "opencv-contrib-python",
+    "cv2": "opencv-contrib-python-headless",
     "openpyxl": "openpyxl",
     "packaging": "packaging",
     "pandas": "pandas",

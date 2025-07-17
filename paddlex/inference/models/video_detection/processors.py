@@ -22,7 +22,7 @@ from ...utils.benchmark import benchmark
 
 
 @benchmark.timeit
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class ResizeVideo:
     """Resizes frames of a video to a specified target size.
 

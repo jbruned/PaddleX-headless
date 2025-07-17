@@ -19,11 +19,11 @@ import numpy as np
 from ....utils.deps import class_requires_deps, is_dep_available
 from ...common.result import BaseCVResult, JsonMixin
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
-@class_requires_deps("opencv-contrib-python")
+@class_requires_deps("opencv-contrib-python-headless")
 class TextDetResult(BaseCVResult):
 
     def _to_img(self):

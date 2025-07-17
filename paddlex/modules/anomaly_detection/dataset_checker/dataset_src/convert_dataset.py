@@ -26,7 +26,7 @@ from .....utils.deps import function_requires_deps, is_dep_available
 from .....utils.file_interface import custom_open
 from .....utils.logging import info
 
-if is_dep_available("opencv-contrib-python"):
+if is_dep_available("opencv-contrib-python-headless"):
     import cv2
 
 
@@ -40,7 +40,7 @@ def convert_dataset(dataset_type, input_dir):
         raise NotImplementedError(dataset_type)
 
 
-@function_requires_deps("opencv-contrib-python")
+@function_requires_deps("opencv-contrib-python-headless")
 def convert_labelme_dataset(input_dir):
     """convert labelme format to paddlex official format"""
     bg_name = "_background_"
